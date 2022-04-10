@@ -60,3 +60,15 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+
+{{/*
+Create the name of the credentials' secret.
+*/}}
+{{- define "gcp-idle-resources-metrics.secretName" -}}
+{{- if .Values.credentials.existingSecret -}}
+  {{- .Values.credentials.existingSecret -}}
+{{- else -}}
+  {{ default (include "gcp-idle-resources-metrics.fullname" .) .Values.credentials.name }}
+{{- end -}}
+{{- end -}}

@@ -55,8 +55,23 @@ spec:
             {{- with .Values.env }}
             {{- toYaml . | nindent 12 }}
             {{- end }}
+            {{- if .Values.credentials.useSecret }}
+            - name: GOOGLE_APPLICATION_CREDENTIALS
+              value: /credentials/service-account-keyfile.json
+            {{- end }}
+          volumeMounts:
+            {{- if .Values.credentials.useSecret }}
+            - name: gcp-credentials
+              mountPath: /credentials
+            {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+      volumes:
+        {{- if .Values.credentials.useSecret }}
+        - name: gcp-credentials
+          secret:
+            secretName: {{ include "gcp-idle-resources-metrics.secretName" . }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

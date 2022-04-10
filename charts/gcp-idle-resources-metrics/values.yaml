@@ -26,6 +26,30 @@ serviceAccount:
   # -- The name of the service account to use. If not set and create is true, a name is generated using the fullname template
   name: ""
 
+# -- Info about the secret bearing the GCP service-account-keyfile.json
+credentials:
+  # -- Whether a secret should be used. Set to false if using workload identity instead of providing the key file.
+  useSecret: true
+  # -- Name of the secret to create if `useSecret` is true and `existingSecret` is empty
+  name: ""
+  # -- Name of a pre-existing secret containing service-account-keyfile.json
+  existingSecret: ""
+  # -- Content of service-account-keyfile.json to create if `useSecret` is true and `existingSecret` is empty
+  secretContents:
+    service-account-keyfile.json: |
+      {
+        "type": "service_account",
+        "project_id": "",
+        "private_key_id": "",
+        "private_key": "-----BEGIN PRIVATE KEY-----\n-----END PRIVATE KEY-----\n",
+        "client_email": "",
+        "client_id": "",
+        "auth_uri": "",
+        "token_uri": "",
+        "auth_provider_x509_cert_url": "",
+        "client_x509_cert_url": ""
+      }
+
 # -- Whether to create a Prometheus operator ServiceMonitor resource
 serviceMonitor:
   create: false

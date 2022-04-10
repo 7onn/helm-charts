@@ -1,6 +1,6 @@
 # gcp-idle-resources-metrics
 
-![Version: 0.4.3](https://img.shields.io/badge/Version-0.4.3-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.0.1](https://img.shields.io/badge/AppVersion-v0.0.1-informational?style=flat-square)
+![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.0.1](https://img.shields.io/badge/AppVersion-v0.0.1-informational?style=flat-square)
 
 A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 
@@ -9,6 +9,11 @@ A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
+| credentials | object | `{"existingSecret":"","name":"","secretContents":{"service-account-keyfile.json":"{\n  \"type\": \"service_account\",\n  \"project_id\": \"\",\n  \"private_key_id\": \"\",\n  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n-----END PRIVATE KEY-----\\n\",\n  \"client_email\": \"\",\n  \"client_id\": \"\",\n  \"auth_uri\": \"\",\n  \"token_uri\": \"\",\n  \"auth_provider_x509_cert_url\": \"\",\n  \"client_x509_cert_url\": \"\"\n}\n"},"useSecret":true}` | Info about the secret bearing the GCP service-account-keyfile.json |
+| credentials.existingSecret | string | `""` | Name of a pre-existing secret containing service-account-keyfile.json |
+| credentials.name | string | `""` | Name of the secret to create if `useSecret` is true and `existingSecret` is empty |
+| credentials.secretContents | object | `{"service-account-keyfile.json":"{\n  \"type\": \"service_account\",\n  \"project_id\": \"\",\n  \"private_key_id\": \"\",\n  \"private_key\": \"-----BEGIN PRIVATE KEY-----\\n-----END PRIVATE KEY-----\\n\",\n  \"client_email\": \"\",\n  \"client_id\": \"\",\n  \"auth_uri\": \"\",\n  \"token_uri\": \"\",\n  \"auth_provider_x509_cert_url\": \"\",\n  \"client_x509_cert_url\": \"\"\n}\n"}` | Content of service-account-keyfile.json to create if `useSecret` is true and `existingSecret` is empty |
+| credentials.useSecret | bool | `true` | Whether a secret should be used. Set to false if using workload identity instead of providing the key file. |
 | customLabels | object | `{}` | Custom labels to apply on every resource managed by this Chart |
 | env | list | `[{"name":"GCP_PROJECT_ID","value":""},{"name":"GCP_REGIONS","value":""}]` | Workload's environment variables |
 | env[0] | object | `{"name":"GCP_PROJECT_ID","value":""}` | GCP Project ID to monitor |
