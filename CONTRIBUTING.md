@@ -1,4 +1,13 @@
 # Contributing
+
+## Documentation
+[helm-docs](https://github.com/norwoodj/helm-docs) generates the README.md.
+
+```bash
+cd charts/gcp-idle-resources-metrics
+helm-docs
+```
+
 ## DCO Sign off
 
 All authors to the project retain copyright to their work. However, to ensure
