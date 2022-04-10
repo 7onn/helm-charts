@@ -17,8 +17,8 @@ $ helm repo add 7onn https://www.7onn.dev/helm-charts
 You can then run `helm search repo 7onn` to see the charts.
 
 ## Contributing
+Check our [Code of Conduct](https://github.com/7onn/helm-charts/blob/main/CODE-OF-CONDUCT.md) and [Contribution guide](https://github.com/7onn/helm-charts/blob/main/CONTRIBUTING.md).
 
-TBD
 
 ## License
 
