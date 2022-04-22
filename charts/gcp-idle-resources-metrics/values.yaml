@@ -54,6 +54,7 @@ credentials:
 serviceMonitor:
   create: false
   scrapeInterval: 5m
+  scrapeTimeout: 30s
 
 podAnnotations: {}
 

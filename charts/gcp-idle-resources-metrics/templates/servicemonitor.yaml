@@ -13,6 +13,7 @@ spec:
   - path: /metrics
     port: http
     interval: {{ .Values.serviceMonitor.scrapeInterval }}
+    scrapeTimeout: {{ .Values.serviceMonitor.scrapeTimeout }}
   namespaceSelector:
     matchNames:
     - {{ .Release.Namespace }}
