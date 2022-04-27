@@ -14,6 +14,8 @@ image:
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
+kubeVersionOverride: ""
+
 
 # -- Custom labels to apply on every resource managed by this Chart
 customLabels: {}
@@ -57,6 +59,13 @@ serviceMonitor:
   scrapeTimeout: 30s
 
 podAnnotations: {}
+
+# -- Whether to create a PodDisruptionBudget resource
+podDisruptionBudget:
+  create: true
+  annotations: {}
+  minAvailable: 1
+  # maxUnavailable:
 
 podSecurityContext: {}
   # fsGroup: 2000

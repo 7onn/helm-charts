@@ -1,6 +1,6 @@
 # gcp-idle-resources-metrics
 
-![Version: 0.5.0](https://img.shields.io/badge/Version-0.5.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.0.1](https://img.shields.io/badge/AppVersion-v0.0.1-informational?style=flat-square)
+![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.0](https://img.shields.io/badge/AppVersion-v1.1.0-informational?style=flat-square)
 
 A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 
@@ -21,9 +21,11 @@ A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 | fullnameOverride | string | `""` |  |
 | image | object | `{"pullPolicy":"IfNotPresent","repository":"devbytom/gcp-idle-resources-metrics","tag":""}` | Container image |
 | imagePullSecrets | list | `[]` |  |
+| kubeVersionOverride | string | `""` |  |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
+| podDisruptionBudget | object | `{"annotations":{},"create":true,"minAvailable":1}` | Whether to create a PodDisruptionBudget resource |
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"100m"` |  |
@@ -37,7 +39,7 @@ A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
 | serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
 | serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
-| serviceMonitor | object | `{"create":false,"scrapeInterval":"5m"}` | Whether to create a Prometheus operator ServiceMonitor resource |
+| serviceMonitor | object | `{"create":false,"scrapeInterval":"5m","scrapeTimeout":"30s"}` | Whether to create a Prometheus operator ServiceMonitor resource |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------

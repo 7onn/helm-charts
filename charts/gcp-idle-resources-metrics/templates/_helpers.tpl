@@ -72,3 +72,18 @@ Create the name of the credentials' secret.
   {{ default (include "gcp-idle-resources-metrics.fullname" .) .Values.credentials.name }}
 {{- end -}}
 {{- end -}}
+
+
+{{/* Allow KubeVersion to be overridden. */}}
+{{- define "gcp-idle-resources-metrics.kubeVersion" -}}
+  {{- default .Capabilities.KubeVersion.Version .Values.kubeVersionOverride -}}
+{{- end -}}
+
+{{/* Get Policy API Version */}}
+{{- define "gcp-idle-resources-metrics.pdb.apiVersion" -}}
+  {{- if and (.Capabilities.APIVersions.Has "policy/v1") (semverCompare ">= 1.21-0" (include "gcp-idle-resources-metrics.kubeVersion" .)) -}}
+      {{- print "policy/v1" -}}
+  {{- else -}}
+    {{- print "policy/v1beta1" -}}
+  {{- end -}}
+{{- end -}}
