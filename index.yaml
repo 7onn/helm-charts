@@ -3,6 +3,19 @@ entries:
   gcp-idle-resources-metrics:
   - apiVersion: v2
     appVersion: v1.1.0
+    created: "2022-04-27T22:24:19.294205759Z"
+    description: A Helm chart for running gcp-idle-resources-metrics on Kubernetes
+    digest: bb24fd7572b4f12f8bdd1719f510c21fd586bd665eccc2fafb0b1619b6ece954
+    maintainers:
+    - email: devbytom@gmail.com
+      name: 7onn
+    name: gcp-idle-resources-metrics
+    type: application
+    urls:
+    - https://github.com/7onn/helm-charts/releases/download/gcp-idle-resources-metrics-0.8.0/gcp-idle-resources-metrics-0.8.0.tgz
+    version: 0.8.0
+  - apiVersion: v2
+    appVersion: v1.1.0
     created: "2022-04-25T17:55:32.607593706Z"
     description: A Helm chart for running gcp-idle-resources-metrics on Kubernetes
     digest: 81a6e8c883fabff0d168e3fdd0c16de4cb3231f5369a3aa9ab8ad1ae531bd0fe
@@ -41,4 +54,4 @@ entries:
     urls:
     - https://github.com/7onn/helm-charts/releases/download/gcp-idle-resources-metrics-0.4.3/gcp-idle-resources-metrics-0.4.3.tgz
     version: 0.4.3
-generated: "2022-04-25T17:55:32.607617707Z"
+generated: "2022-04-27T22:24:19.294224359Z"
