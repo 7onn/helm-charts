@@ -62,7 +62,7 @@ podAnnotations: {}
 
 # -- Whether to create a PodDisruptionBudget resource
 podDisruptionBudget:
-  create: true
+  create: false
   annotations: {}
   minAvailable: 1
   # maxUnavailable:
