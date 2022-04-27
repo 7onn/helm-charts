@@ -42,4 +42,7 @@ jobs:
         if: steps.list-changed.outputs.changed == 'true'
 
       - name: Run chart-testing (install)
-        run: ct install
+        run: |
+          ct install \
+            --chart-dirs charts \
+            --config .github/linters/ct.yaml \
