@@ -12,6 +12,11 @@ spec:
   selector:
     matchLabels:
       {{- include "gcp-idle-resources-metrics.selectorLabels" . | nindent 6 }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: {{ .Values.replicaCount }}
+      maxUnavailable: 0
   template:
     metadata:
       {{- with .Values.podAnnotations }}

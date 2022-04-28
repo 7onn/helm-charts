@@ -1,8 +1,14 @@
 # gcp-idle-resources-metrics
 
-![Version: 0.8.0](https://img.shields.io/badge/Version-0.8.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.0](https://img.shields.io/badge/AppVersion-v1.1.0-informational?style=flat-square)
+![Version: 0.8.1](https://img.shields.io/badge/Version-0.8.1-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v1.1.1](https://img.shields.io/badge/AppVersion-v1.1.1-informational?style=flat-square)
 
 A Helm chart for running gcp-idle-resources-metrics on Kubernetes
+
+## Maintainers
+
+| Name | Email | Url |
+| ---- | ------ | --- |
+| 7onn | devbytom@gmail.com |  |
 
 ## Values
 
@@ -25,7 +31,7 @@ A Helm chart for running gcp-idle-resources-metrics on Kubernetes
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
-| podDisruptionBudget | object | `{"annotations":{},"create":true,"minAvailable":1}` | Whether to create a PodDisruptionBudget resource |
+| podDisruptionBudget | object | `{"annotations":{},"create":false,"minAvailable":1}` | Whether to create a PodDisruptionBudget resource |
 | podSecurityContext | object | `{}` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.cpu | string | `"100m"` |  |
