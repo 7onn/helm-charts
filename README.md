@@ -1,6 +1,7 @@
 # Kubernetes Helm Charts
 
 [![License](https://img.shields.io/badge/license-GPL3-blue)](https://www.gnu.org/licenses/gpl-3.0.en.html)
+[![Lint and Test Charts](https://github.com/7onn/helm-charts/actions/workflows/lint-test.yaml/badge.svg)](https://github.com/7onn/helm-charts/actions/workflows/lint-test.yaml)
 [![](https://github.com/7onn/helm-charts/workflows/Release%20Charts/badge.svg?branch=main)](https://github.com/7onn/helm-charts/actions)
 
 ## Usage
