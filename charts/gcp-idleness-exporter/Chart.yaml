@@ -1,6 +1,6 @@
 apiVersion: v2
-name: gcp-idle-resources-metrics
-description: A Helm chart for running gcp-idle-resources-metrics on Kubernetes
+name: gcp-idleness-exporter
+description: A Helm chart for running gcp-idleness-exporter on Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
 #

@@ -2,9 +2,9 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
-  name: {{ include "gcp-idle-resources-metrics.fullname" . }}
+  name: {{ include "gcp-idleness-exporter.fullname" . }}
   labels:
-    {{- include "gcp-idle-resources-metrics.labels" . | nindent 4 }}
+    {{- include "gcp-idleness-exporter.labels" . | nindent 4 }}
     {{- with .Values.customLabels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -19,5 +19,5 @@ spec:
     - {{ .Release.Namespace }}
   selector:
     matchLabels:
-      {{- include "gcp-idle-resources-metrics.labels" . | nindent 6 }}
+      {{- include "gcp-idleness-exporter.labels" . | nindent 6 }}
 {{- end }}

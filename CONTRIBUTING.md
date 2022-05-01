@@ -4,7 +4,7 @@
 [helm-docs](https://github.com/norwoodj/helm-docs) generates the README.md.
 
 ```bash
-cd charts/gcp-idle-resources-metrics
+cd charts/gcp-idleness-exporter
 helm-docs
 ```
 
