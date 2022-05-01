@@ -67,4 +67,18 @@ entries:
     urls:
     - https://github.com/7onn/helm-charts/releases/download/gcp-idle-resources-metrics-0.4.3/gcp-idle-resources-metrics-0.4.3.tgz
     version: 0.4.3
-generated: "2022-04-28T18:07:31.123547433Z"
+  gcp-idleness-exporter:
+  - apiVersion: v2
+    appVersion: v2.0.0
+    created: "2022-05-01T18:38:05.401371463Z"
+    description: A Helm chart for running gcp-idleness-exporter on Kubernetes
+    digest: 77e2dc8af1b1cb27838d5d1e104026650649fbd441c00e8cbd6cf457b6dacfe4
+    maintainers:
+    - email: devbytom@gmail.com
+      name: 7onn
+    name: gcp-idleness-exporter
+    type: application
+    urls:
+    - https://github.com/7onn/helm-charts/releases/download/gcp-idleness-exporter-1.0.0/gcp-idleness-exporter-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-05-01T18:38:05.401399365Z"
