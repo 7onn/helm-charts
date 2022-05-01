@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "gcp-idle-resources-metrics.fullname" . }}
+  name: {{ include "gcp-idleness-exporter.fullname" . }}
   labels:
-    {{- include "gcp-idle-resources-metrics.labels" . | nindent 4 }}
+    {{- include "gcp-idleness-exporter.labels" . | nindent 4 }}
     {{- with .Values.customLabels }}
     {{- toYaml . | nindent 4 }}
     {{- end }}
@@ -11,7 +11,7 @@ spec:
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      {{- include "gcp-idle-resources-metrics.selectorLabels" . | nindent 6 }}
+      {{- include "gcp-idleness-exporter.selectorLabels" . | nindent 6 }}
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -24,7 +24,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "gcp-idle-resources-metrics.selectorLabels" . | nindent 8 }}
+        {{- include "gcp-idleness-exporter.selectorLabels" . | nindent 8 }}
         {{- with .Values.customLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
@@ -33,7 +33,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "gcp-idle-resources-metrics.serviceAccountName" . }}
+      serviceAccountName: {{ include "gcp-idleness-exporter.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -75,7 +75,7 @@ spec:
         {{- if .Values.credentials.useSecret }}
         - name: gcp-credentials
           secret:
-            secretName: {{ include "gcp-idle-resources-metrics.secretName" . }}
+            secretName: {{ include "gcp-idleness-exporter.secretName" . }}
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
