@@ -69,6 +69,19 @@ entries:
     version: 0.4.3
   gcp-idleness-exporter:
   - apiVersion: v2
+    appVersion: v2.0.2
+    created: "2023-04-07T13:20:06.496305533Z"
+    description: A Helm chart for running gcp-idleness-exporter on Kubernetes
+    digest: 13717b3b8f2533d800710791b88ba4cefbbd13ec66c0a1442b3bd0fa9b897523
+    maintainers:
+    - email: devbytom@gmail.com
+      name: 7onn
+    name: gcp-idleness-exporter
+    type: application
+    urls:
+    - https://github.com/7onn/helm-charts/releases/download/gcp-idleness-exporter-1.0.1/gcp-idleness-exporter-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
     appVersion: v2.0.0
     created: "2022-05-01T18:38:05.401371463Z"
     description: A Helm chart for running gcp-idleness-exporter on Kubernetes
@@ -81,4 +94,4 @@ entries:
     urls:
     - https://github.com/7onn/helm-charts/releases/download/gcp-idleness-exporter-1.0.0/gcp-idleness-exporter-1.0.0.tgz
     version: 1.0.0
-generated: "2022-05-01T18:38:05.401399365Z"
+generated: "2023-04-07T13:20:06.496320733Z"
